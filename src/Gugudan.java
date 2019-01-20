@@ -22,9 +22,15 @@ public class Gugudan {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("출력할 단을 입력하세요 : ");
 		String s = sc.nextLine();
-		sc.close();
+		s = s.replaceAll(" ", "");
+		System.out.println(s);
 		
-		String sArr[] = s.trim().split(",");
+		sc.close();
+		if(!s.contains(",")) {
+			s = s + "," + s;
+		}
+		
+		String sArr[] = s.split(",");
 		int[] iArr = new int[sArr.length];
 		for(int i = 0; i < sArr.length; i++) {
 			iArr[i] = Integer.parseInt(sArr[i]);
